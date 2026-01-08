@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Matriz de focalización social (interactiva)</title>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 24px;
+      color: #111;
+    }
+    h1 { margin: 0 0 8px 0; font-size: 22px; }
+    .sub { color: #444; margin-bottom: 18px; }
+    .wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .panel {
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 18px;
+      background: #fafafa;
+    }
+    .sources {
+      margin: 10px 0 0 18px;
+      padding: 0;
+    }
+    .sources li {
+      margin: 8px 0;
+      line-height: 1.25rem;
+    }
+    .muted {
+      color: #666;
+      font-size: 12px;
+      display: block;
+      margin-top: 2px;
+      word-break: break-all;
+    }
+    a.src {
+      text-decoration: none;
+      border-bottom: 1px dotted #333;
+      padding: 0 2px;
+      margin-left: 4px;
+      white-space: nowrap;
+    }
+    table.dataTable td {
+      vertical-align: top;
+      white-space: normal !important;
+      word-break: break-word;
+      line-height: 1.25rem;
+    }
+    table.dataTable th {
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Matriz comparativa de focalización social (interactiva)</h1>
+  <div class="sub">
+    Links de fuentes clickeables dentro de las celdas. Usa el buscador para filtrar conceptos (ej: “RTI”, “IEVS”, “living together”, “DOMINO”).
+  </div>
+
+  <table id='matrix' class='display'><thead><tr><th>País/Sistema</th><th>¿Ancla transversal tipo RSH?</th><th>Ingreso (fuente verdad)</th><th>Hogar/familia (fuente verdad)</th><th>Anti-subdeclaración</th><th>Anti-oportunismo familiar</th><th>Enforcement</th></tr></thead><tbody><tr><td>Reino Unido (Universal Credit / PIP)</td><td>No (focalización por programa)</td><td>HMRC RTI + data matching <a class="src" href="https://assets.publishing.service.gov.uk/media/5a82be85ed915d74e623769b/fraud-and-error-background-and-methodology.pdf" target="_blank" rel="noopener noreferrer">UK-1</a></td><td>Single view del hogar; riesgo &#x27;living together&#x27; <a class="src" href="https://assets.publishing.service.gov.uk/media/5a82be85ed915d74e623769b/fraud-and-error-background-and-methodology.pdf" target="_blank" rel="noopener noreferrer">UK-1</a></td><td>Cruces RTI mensuales + analítica de riesgo <a class="src" href="https://assets.publishing.service.gov.uk/media/5a82be85ed915d74e623769b/fraud-and-error-background-and-methodology.pdf" target="_blank" rel="noopener noreferrer">UK-1</a></td><td>Detección de cohabitación/no declaración (&#x27;living together&#x27;) <a class="src" href="https://assets.publishing.service.gov.uk/media/5a82be85ed915d74e623769b/fraud-and-error-background-and-methodology.pdf" target="_blank" rel="noopener noreferrer">UK-1</a></td><td>Recuperación de sobrepagos + multas civiles <a class="src" href="https://assets.publishing.service.gov.uk/media/5a82be85ed915d74e623769b/fraud-and-error-background-and-methodology.pdf" target="_blank" rel="noopener noreferrer">UK-1</a></td></tr>
+<tr><td>EE.UU. (SNAP)</td><td>No (programa por programa)</td><td>IEVS/QC + matches federales/estatales <a class="src" href="https://snapqcs.fns.usda.gov/Welcome/Doc/FNS310Handbook.pdf" target="_blank" rel="noopener noreferrer">US-2</a></td><td>Verificación documental + terceros <a class="src" href="https://snapqcs.fns.usda.gov/Welcome/Doc/FNS310Handbook.pdf" target="_blank" rel="noopener noreferrer">US-2</a></td><td>QC obligatorio; investigar leads IEVS <a class="src" href="https://snapqcs.fns.usda.gov/Welcome/Doc/FNS310Handbook.pdf" target="_blank" rel="noopener noreferrer">US-2</a></td><td>Verificación independiente de convivencia <a class="src" href="https://snapqcs.fns.usda.gov/Welcome/Doc/FNS310Handbook.pdf" target="_blank" rel="noopener noreferrer">US-2</a></td><td>Descalificación, devolución, sanciones penales/civiles <a class="src" href="https://snapqcs.fns.usda.gov/Welcome/Doc/FNS310Handbook.pdf" target="_blank" rel="noopener noreferrer">US-2</a></td></tr>
+<tr><td>Australia (Centrelink / ATO)</td><td>No formal, pero coherente vía datos</td><td>ATO + data matching (NEIDM) <a class="src" href="https://www.servicesaustralia.gov.au/centrelink-data-matching-activities?context=22" target="_blank" rel="noopener noreferrer">AU-1</a><a class="src" href="https://www.ato.gov.au/about-ato/commitments-and-reporting/in-detail/privacy-and-information-gathering/how-we-use-data-matching" target="_blank" rel="noopener noreferrer">AU-2</a></td><td>DOMINO + direcciones (ARID) <a class="src" href="https://www.servicesaustralia.gov.au/centrelink-data-matching-activities?context=22" target="_blank" rel="noopener noreferrer">AU-1</a></td><td>Data matching masivo; deuda por discrepancias <a class="src" href="https://www.anao.gov.au/work/performance-audit/debt-management-and-recovery-services-australia" target="_blank" rel="noopener noreferrer">AU-3</a></td><td>Validación vía co-residencia/direcciones <a class="src" href="https://www.servicesaustralia.gov.au/centrelink-data-matching-activities?context=22" target="_blank" rel="noopener noreferrer">AU-1</a></td><td>Recuperación de deuda + compliance <a class="src" href="https://www.anao.gov.au/work/performance-audit/debt-management-and-recovery-services-australia" target="_blank" rel="noopener noreferrer">AU-3</a></td></tr>
+<tr><td>Irlanda (DSP, means test)</td><td>Intermedio (means test reutilizable)</td><td>Means testing transversal + controles DSP <a class="src" href="https://www.gov.ie/en/department-of-social-protection/publications/control-structure-2/" target="_blank" rel="noopener noreferrer">IRL-1</a></td><td>Verificación de convivencia/estado civil <a class="src" href="https://www.gov.ie/en/department-of-social-protection/publications/control-structure-2/" target="_blank" rel="noopener noreferrer">IRL-1</a></td><td>Controles en línea + unidades de investigación <a class="src" href="https://www.gov.ie/en/department-of-social-protection/publications/control-structure-2/" target="_blank" rel="noopener noreferrer">IRL-1</a></td><td>Investigaciones locales y revisión de cambios <a class="src" href="https://www.gov.ie/en/department-of-social-protection/publications/control-structure-2/" target="_blank" rel="noopener noreferrer">IRL-1</a></td><td>Recuperación + sanciones <a class="src" href="https://www.gov.ie/en/department-of-social-protection/publications/control-structure-2/" target="_blank" rel="noopener noreferrer">IRL-1</a></td></tr>
+<tr><td>Países nórdicos (benchmark)</td><td>Sí (registros universales, implícito)</td><td>Registros tributarios integrados <a class="src" href="file:///C:/Users/egall/Register_based_statistics_in_Nordic_countries.pdf" target="_blank" rel="noopener noreferrer">NO-1</a></td><td>Registro poblacional + direcciones (ID personal) <a class="src" href="file:///C:/Users/egall/Register_based_statistics_in_Nordic_countries.pdf" target="_blank" rel="noopener noreferrer">NO-1</a></td><td>Prellenado y verificación administrativa continua <a class="src" href="file:///C:/Users/egall/Register_based_statistics_in_Nordic_countries.pdf" target="_blank" rel="noopener noreferrer">NO-1</a></td><td>Hogares reconstruidos por registros (dirección/vínculos) <a class="src" href="file:///C:/Users/egall/Nordic_Health_Registry-Based_Research_A_Review_of_.pdf" target="_blank" rel="noopener noreferrer">NO-2</a></td><td>Automático/continuo (menos carga al usuario) <a class="src" href="file:///C:/Users/egall/Register_based_statistics_in_Nordic_countries.pdf" target="_blank" rel="noopener noreferrer">NO-1</a></td></tr></tbody></table>
+
+  <div class="panel">
+    <h2 style="margin:0; font-size:16px;">Fuentes (códigos)</h2>
+    <ul class='sources'><li><a href="https://assets.publishing.service.gov.uk/media/5a82be85ed915d74e623769b/fraud-and-error-background-and-methodology.pdf" target="_blank" rel="noopener noreferrer"><b>UK-1</b></a> <span class="muted">https://assets.publishing.service.gov.uk/media/5a82be85ed915d74e623769b/fraud-and-error-background-and-methodology.pdf</span></li>
+<li><a href="https://www.gov.uk/government/consultations/public-authorities-fraud-error-and-recovery-act-dwp-codes-of-practice-verifying-eligibility-in-the-welfare-system-obtaining-information-and-recov/public-authorities-fraud-error-and-recovery-act-dwp-codes-of-practice-verifying-eligibility-in-the-welfare-system-obtaining-information-and-recov" target="_blank" rel="noopener noreferrer"><b>UK-2</b></a> <span class="muted">https://www.gov.uk/government/consultations/public-authorities-fraud-error-and-recovery-act-dwp-codes-of-practice-verifying-eligibility-in-the-welfare-system-obtaining-information-and-recov/public-authorities-fraud-error-and-recovery-act-dwp-codes-of-practice-verifying-eligibility-in-the-welfare-system-obtaining-information-and-recov</span></li>
+<li><a href="https://www.federalregister.gov/documents/2022/10/03/2022-21011/supplemental-nutrition-assistance-program-requirement-for-interstate-data-matching-to-prevent" target="_blank" rel="noopener noreferrer"><b>US-1</b></a> <span class="muted">https://www.federalregister.gov/documents/2022/10/03/2022-21011/supplemental-nutrition-assistance-program-requirement-for-interstate-data-matching-to-prevent</span></li>
+<li><a href="https://snapqcs.fns.usda.gov/Welcome/Doc/FNS310Handbook.pdf" target="_blank" rel="noopener noreferrer"><b>US-2</b></a> <span class="muted">https://snapqcs.fns.usda.gov/Welcome/Doc/FNS310Handbook.pdf</span></li>
+<li><a href="https://www.servicesaustralia.gov.au/centrelink-data-matching-activities?context=22" target="_blank" rel="noopener noreferrer"><b>AU-1</b></a> <span class="muted">https://www.servicesaustralia.gov.au/centrelink-data-matching-activities?context=22</span></li>
+<li><a href="https://www.ato.gov.au/about-ato/commitments-and-reporting/in-detail/privacy-and-information-gathering/how-we-use-data-matching" target="_blank" rel="noopener noreferrer"><b>AU-2</b></a> <span class="muted">https://www.ato.gov.au/about-ato/commitments-and-reporting/in-detail/privacy-and-information-gathering/how-we-use-data-matching</span></li>
+<li><a href="https://www.anao.gov.au/work/performance-audit/debt-management-and-recovery-services-australia" target="_blank" rel="noopener noreferrer"><b>AU-3</b></a> <span class="muted">https://www.anao.gov.au/work/performance-audit/debt-management-and-recovery-services-australia</span></li>
+<li><a href="https://www.gov.ie/en/department-of-social-protection/publications/control-structure-2/" target="_blank" rel="noopener noreferrer"><b>IRL-1</b></a> <span class="muted">https://www.gov.ie/en/department-of-social-protection/publications/control-structure-2/</span></li>
+<li><a href="file:///C:/Users/egall/Register_based_statistics_in_Nordic_countries.pdf" target="_blank" rel="noopener noreferrer"><b>NO-1</b></a> <span class="muted">file:///C:/Users/egall/Register_based_statistics_in_Nordic_countries.pdf</span></li>
+<li><a href="file:///C:/Users/egall/Nordic_Health_Registry-Based_Research_A_Review_of_.pdf" target="_blank" rel="noopener noreferrer"><b>NO-2</b></a> <span class="muted">file:///C:/Users/egall/Nordic_Health_Registry-Based_Research_A_Review_of_.pdf</span></li></ul>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('#matrix').DataTable({
+      pageLength: 10,
+      lengthMenu: [5, 10, 25, 50, 100],
+      order: [],
+      language: {
+        search: "Buscar:",
+        lengthMenu: "Mostrar _MENU_ filas",
+        info: "Mostrando _START_ a _END_ de _TOTAL_ filas",
+        infoEmpty: "Sin resultados",
+        zeroRecords: "No se encontraron coincidencias",
+        paginate: {
+          first: "Primera",
+          last: "Última",
+          next: "Siguiente",
+          previous: "Anterior"
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
